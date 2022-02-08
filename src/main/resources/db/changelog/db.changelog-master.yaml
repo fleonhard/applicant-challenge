@@ -1,3 +1,32 @@
 
 databaseChangeLog:
-  - changeset:
+  - changeSet:
+      id: createCategoryTable
+      author: liquibase-docs
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  name: id
+                  type: varchar(36)
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: text
+              - column:
+                  name: version
+                  type: int
+              - column:
+                  name: slug
+                  type: text
+              - column:
+                  name: parent_id
+                  type: varchar(36)
+              - column:
+                  name: deleted
+                  type: boolean
+            schemaName: public
+            tableName: categories
+
+
